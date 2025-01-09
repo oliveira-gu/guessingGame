@@ -26,8 +26,6 @@ int main(){
             continue;
         }
 
-        // printf("Oh, so %d is your guess? ", playerGuess);
-
         // Building the code's conditionals
         int hit = (playerGuess == secretNumber);
         int greater = playerGuess > secretNumber;
