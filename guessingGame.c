@@ -19,7 +19,7 @@ int main(){
 
     int secretNumber = bigNumber % 100;
 
-    int playerAttempts = 1;
+    int attempts = 1;
 
     int playerGuess;
 
@@ -27,10 +27,33 @@ int main(){
 
     double score = 1000;
 
-    // Building the game menu
-    while (playerWin == 0){
+    int hit = 0;
 
-        printf("Attempt %d\n", playerAttempts);
+    // Adding difficulty into the game
+    int level;
+    printf("Choose the game level\n");
+    printf("(1)Easy (2)Medium (3)Hard\n\n");
+    printf("Choice: ");
+    scanf("%d", &level);
+
+    int playerAttempts;
+
+    switch (level) {
+    case 1:
+        playerAttempts = 20;
+        break;
+    case 2:
+        playerAttempts = 15;
+        break;
+    default:
+        playerAttempts = 6;
+        break;
+    }
+    
+    // Building the game menu
+    for (int i = 1; i <= playerAttempts; i++){
+
+        printf("Attempt %d\n", attempts);
         printf("What is your guess? ");
         scanf("%d", &playerGuess);
 
@@ -40,12 +63,13 @@ int main(){
         }
 
         // Building the code's conditionals
-        int hit = (playerGuess == secretNumber);
+
+        hit = (playerGuess == secretNumber);
+
         int greater = playerGuess > secretNumber;
 
         if(hit){
-            printf("Congrats! You've got it right.\n");
-            playerWin = 1;
+            break;
         }
 
         else if (greater){
@@ -56,16 +80,23 @@ int main(){
             printf("Your guess was less than the secret number.\n");
         }
         
-        playerAttempts++;
+        attempts++;
 
         double lostScore = abs(playerGuess - secretNumber) / (double) 2;
         score -= lostScore; 
 
     }
-    
+
     printf("\nEnd game\n");
-    printf("You finished the game after %d attempts\n", playerAttempts-1);
-    printf("Total score: %.1f\n", score);
+
+    if (hit){
+        printf("Congrats! You've got it right.\n");
+        printf("You finished the game after %d attempts\n", playerAttempts-1);
+        printf("Total score: %.1f\n", score);
+    } else {
+        printf("Game Over! Try again\n");
+    }
+    
     return 0;
 
 }
