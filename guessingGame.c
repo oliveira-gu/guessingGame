@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 
 int main(){
@@ -8,11 +10,22 @@ int main(){
     printf("* Welcome to The Guessing Game *\n");
     printf("********************************\n");
 
-    // Store the secret number in a variable
-    int secretNumber = 10;
+    // Store the secret number in a variable and making it random
+    
+    int seconds = time(0);
+    srand(seconds);
+
+    int bigNumber = rand();
+
+    int secretNumber = bigNumber % 100;
+
     int playerAttempts = 1;
+
     int playerGuess;
+
     int playerWin = 0;
+
+    double score = 1000;
 
     // Building the game menu
     while (playerWin == 0){
@@ -44,10 +57,15 @@ int main(){
         }
         
         playerAttempts++;
+
+        double lostScore = abs(playerGuess - secretNumber) / (double) 2;
+        score -= lostScore; 
+
     }
     
     printf("\nEnd game\n");
     printf("You finished the game after %d attempts\n", playerAttempts-1);
+    printf("Total score: %.1f\n", score);
     return 0;
 
 }
