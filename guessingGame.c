@@ -6,9 +6,14 @@
 int main(){
     
     // Print the guessing game head
-    printf("********************************\n");
-    printf("* Welcome to The Guessing Game *\n");
-    printf("********************************\n");
+printf("\n\n");
+printf("      __  __   _   _   ___ ___      \n"); 
+printf("     / _` | | | |/ _ \\/ __/ __|     \n");
+printf("    | (_| | |_| |  __/\\__ \\__ \\     \n");
+printf("     \\__, |\\__,_|\\___||___/___/     \n");
+printf("      __/ |                         \n");
+printf("     |___/                          \n");
+printf("\n\n");
 
     // Store the secret number in a variable and making it random
     
@@ -87,14 +92,19 @@ int main(){
 
     }
 
-    printf("\nEnd game\n");
-
     if (hit){
         printf("Congrats! You've got it right.\n");
         printf("You finished the game after %d attempts\n", playerAttempts-1);
         printf("Total score: %.1f\n", score);
     } else {
-        printf("Game Over! Try again\n");
+        printf("\n\n");
+        printf("       ___                         ___                     \n");  
+        printf("     / ___| __ _ _ __ ___   ___   / _ \\__   _____ _ __     \n");
+        printf("    | |  _ / _` | '_ ` _ \\ / _ \\ | | | \\ \\ / / _ \\ '__|    \n");
+        printf("    | |_| | (_| | | | | | |  __/ | |_| |\\ V /  __/ |       \n");
+        printf("     \\____|\\__,_|_| |_| |_|\\___|  \\___/  \\_/ \\___|_|       \n");
+        printf("\n\n");
+
     }
     
     return 0;
