@@ -25,7 +25,7 @@ This project is a simple number guessing game written in C. The game generates a
 5. Your final score will be displayed at the end of the game.
 
 ## Example Run 
-![ExampleRun](guessingGame.png)
+![ExampleRun](GuessingGameProject/guessingGameExampleRun.png)
 
 ## Compilation and Execution
 
