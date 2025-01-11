@@ -24,6 +24,9 @@ This project is a simple number guessing game written in C. The game generates a
 4. Continue guessing until you either guess the correct number or run out of attempts.
 5. Your final score will be displayed at the end of the game.
 
+## Example Run 
+![ExampleRun](guessingGame.png)
+
 ## Compilation and Execution
 
 ### Prerequisites
